@@ -18,5 +18,19 @@ for runda in range(antal):
     spelare = input("Välj sten / sax / påse: ").lower()
     while spelare not in val:
         print("Fel! skriv sten, sax eller påse")
-        spelare = input("Försök igen: ").lower()
+        spelare = input("Försök igen: ").lower() 
+
+    puton = random.choice(val)
+    print("Puton valde:", puton)
+
+   #avgör vinnaren
+    if spelare == puton:
+        print("Oavgjort!")
+    elif (spelare == "sten" and puton == "sax") or \
+            (spelare == "sax" and puton == "påse") or \
+            (spelare == "påse" and puton == "sten"):
+        print(namn, "vann denna runda!")
+        poang_spelare += 1
+
+
 
