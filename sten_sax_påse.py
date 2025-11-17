@@ -7,8 +7,8 @@ namn = input("Vad heter du? ")
 antal = int(input("Hur många rundor vill du spela? ")) 
  
 #poängräkning
-poang_spelare = 0
-poang_puton = 0
+poäng_spelare = 0
+poäng_dator = 0
 
 #alternativ för spelet
 val = ["sten", "sax", "påse"]
@@ -19,4 +19,14 @@ for runda in range(antal):
     while spelare not in val:
         print("Fel! skriv sten, sax eller påse")
         spelare = input("Försök igen: ").lower()
+dator = random.choice(val)
 
+#Avgöra vinnare och förlorare
+if spelare == dator:
+    print("oavgjort!")
+elif (spelare == "sten" and dator == "sax" or spelare == "sax" and dator == "påse" or spelare == "påse" and dator == "sten"):
+    print(f"{namn} Vann rundan!")
+    poäng_spelare += 1
+else: 
+    print("Datorn vann rundan!")
+    poäng_dator += 1
