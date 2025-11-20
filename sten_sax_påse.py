@@ -31,16 +31,22 @@ for runda in range(antal):
         print("Fel! skriv sten, sax eller påse")
         spelare = input("Försök igen: ").lower()
     dator = random.choice(val)
+    
+    #Spelarens och datorns val
+    print(f"{namn} spelar: {spelare}")
+    print(f"Datorn spelar: {dator}")
 
     #Avgöra vinnare och förlorare
     if spelare == dator:
-        print("\nnoavgjort!\n")
+        print("\noavgjort!\n")
     elif (spelare == "sten" and dator == "sax" or spelare == "sax" and dator == "påse" or spelare == "påse" and dator == "sten"):
         print(f"\n{namn} är vinnaren av spelomgång {spelomgång}!\n")
         poäng_spelare += 1
     else: 
         print(f"\nDatorn är vinnaren av spelomgång {spelomgång}!\n")
         poäng_dator += 1
+
+    #Räknar spelomgångar
     spelomgång += 1
 
 #Slutresultat
