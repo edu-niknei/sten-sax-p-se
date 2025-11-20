@@ -50,10 +50,14 @@ for runda in range(antal):
     spelomgång += 1
 
 #Slutresultat
-print("Resultat av spelet")
+print("Spelresultat\n=============")
+print(f"{namn}: {poäng_spelare}p")
+print(f"dator: {poäng_dator}p\n")
 if poäng_spelare > poäng_dator:
     print(f"{namn} vann spelet!")
 elif poäng_dator > poäng_spelare:
     print("Datorn vann spelet!")
 else:
     print("spelet är oavgjort.")
+
+print("programmet avslutades normalt")
