@@ -19,13 +19,14 @@ while True:
 #poängräkning
 poäng_spelare = 0
 poäng_dator = 0
+spelomgång = 1
 
 #alternativ för spelet
 val = ["sten", "sax", "påse"]
 
 #huvudloopen för spelet
 for runda in range(antal):
-    spelare = input("Välj sten / sax / påse: ").lower()
+    spelare = input(f"spelomgång {spelomgång}\n---------\n Välj sten / sax / påse: ").lower()
     while spelare not in val:
         print("Fel! skriv sten, sax eller påse")
         spelare = input("Försök igen: ").lower()
@@ -33,13 +34,14 @@ for runda in range(antal):
 
     #Avgöra vinnare och förlorare
     if spelare == dator:
-        print("oavgjort!")
+        print("\nnoavgjort!\n")
     elif (spelare == "sten" and dator == "sax" or spelare == "sax" and dator == "påse" or spelare == "påse" and dator == "sten"):
-        print(f"{namn} Vann rundan!")
+        print(f"\n{namn} är vinnaren av spelomgång {spelomgång}!\n")
         poäng_spelare += 1
     else: 
-        print("Datorn vann rundan!")
+        print(f"\nDatorn är vinnaren av spelomgång {spelomgång}!\n")
         poäng_dator += 1
+    spelomgång += 1
 
 #Slutresultat
 print("Resultat av spelet")
