@@ -32,12 +32,12 @@ for runda in range(antal):
         print("Fel! skriv sten, sax eller påse")
 #Datorns val
         spelare = input(f"Välj sten / sax / påse: ").lower()
-    dator = random.choice(val)
+    Dator = random.choice(val)
 
     #Avgöra vinnare och förlorare
-    if spelare == dator:
+    if spelare == Dator:
         print("\noavgjort!\n")
-    elif (spelare == "sten" and dator == "sax" or spelare == "sax" and dator == "påse" or spelare == "påse" and dator == "sten" ):
+    elif (spelare == "sten" and Dator == "sax" or spelare == "sax" and Dator == "påse" or spelare == "påse" and Dator == "sten" ):
         print(f"\n{namn} är vinnaren av spelomgång {spelomgång}!\n")
         poäng_spelare += 1
     else: 
@@ -47,16 +47,27 @@ for runda in range(antal):
     #Räknar spelomgångar
     spelomgång += 1
 # Slutresultat – vinnaren skrivs först
-
-if poäng_spelare > poäng_dator:
-    print(f"\n{namn} vann spelet!\n")
-elif poäng_dator > poäng_spelare:
-    print("\nDatorn vann spelet!\n")
-else:
-    print("\nSpelet är oavgjort.\n")
+# Slutresultat – vinnaren skrivs först i listan
 
 print("Spelresultat\n=============")
-print(f"{namn}: {poäng_spelare}p")
-print(f"dator: {poäng_dator}p\n")
+
+if poäng_spelare > poäng_dator:
+    # Spelaren vann → spelaren först
+    print(f"{namn}: {poäng_spelare}p")
+    print(f"Dator: {poäng_dator}p")
+    print(f"\n{namn} vann spelet!\n")
+
+elif poäng_dator > poäng_spelare:
+    # Datorn vann → datorn först
+    print(f"Dator: {poäng_dator}p")
+    print(f"{namn}: {poäng_spelare}p")
+    print("\nDatorn vann spelet!\n")
+
+else:
+    # Oavgjort → ordningen spelar ingen roll
+    print(f"{namn}: {poäng_spelare}p")
+    print(f"Dator: {poäng_dator}p")
+    print("\nSpelet är oavgjort.\n")
 
 print("programmet avslutades normalt")
+
