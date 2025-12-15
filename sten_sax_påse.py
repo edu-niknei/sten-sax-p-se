@@ -46,25 +46,24 @@ for runda in range(antal):
 
     #Räknar spelomgångar
     spelomgång += 1
-# Slutresultat – vinnaren skrivs först
-# Slutresultat – vinnaren skrivs först i listan
+# Slutresultat vinnaren skrivs först i listan
 
 print("Spelresultat\n=============")
 
 if poäng_spelare > poäng_dator:
-    # Spelaren vann → spelaren först
+    # Spelaren vann  spelaren först
     print(f"{namn}: {poäng_spelare}p")
     print(f"Dator: {poäng_dator}p")
     print(f"\n{namn} vann spelet!\n")
 
 elif poäng_dator > poäng_spelare:
-    # Datorn vann → datorn först
+    # Datorn vann  datorn först
     print(f"Dator: {poäng_dator}p")
     print(f"{namn}: {poäng_spelare}p")
     print("\nDatorn vann spelet!\n")
 
 else:
-    # Oavgjort → ordningen spelar ingen roll
+    # Oavgjort ordningen spelar ingen roll
     print(f"{namn}: {poäng_spelare}p")
     print(f"Dator: {poäng_dator}p")
     print("\nSpelet är oavgjort.\n")
